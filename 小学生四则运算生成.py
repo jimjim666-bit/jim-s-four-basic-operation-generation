@@ -1,28 +1,18 @@
 ﻿# -*- coding: utf-8 -*-
-"""
-小学数学四则运算题目生成器（美化版）
-修正：
- 1. 运算类型用真正的复选框（勾选方块），不再显示文字 ☑
- 2. 每道题前面带题号
- 3. 选项区用 grid 精确排版，不再错位
- 4. 每行 4 题（可调），用 Tab 定位，列对齐不串行
-功能：生成 100 以内加减法 + 小学乘除法，界面预览、保存到指定文件夹、再次生成
-运行：直接运行本文件，Python 3 自带 tkinter，无需安装依赖
-"""
+
 
 import random
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
 
-# ---------- 配色 ----------
-BG       = "#eef3f9"   # 窗口背景
-CARD     = "#ffffff"   # 卡片背景
-PRIMARY  = "#3a7bd5"   # 主色（蓝）
-PRIMARY2 = "#5b93e0"   # 主色浅
-GREEN    = "#27ae60"   # 保存按钮绿
-TEXT_D   = "#2c3e50"   # 深色文字
-TEXT_L   = "#7f8c8d"   # 浅色文字
+BG       = "#eef3f9"   
+CARD     = "#ffffff"   
+PRIMARY  = "#3a7bd5"   
+PRIMARY2 = "#5b93e0"   
+GREEN    = "#27ae60"   
+TEXT_D   = "#2c3e50"   
+TEXT_L   = "#7f8c8d"   
 
 
 class MathQuizApp:
@@ -33,7 +23,7 @@ class MathQuizApp:
         self.root.minsize(900, 620)
         self.root.configure(bg=BG)
 
-        self.questions = []          # [(题目串, 答案), ...]
+        self.questions = []          
         self._build_ui()
         self.generate()              # 启动自动生成一批
 
